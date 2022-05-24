@@ -1,8 +1,10 @@
-import "../styles/globals.css";
+import "../assets/stylesheet/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { generateAsciiMaze } from "utils";
 import { useEffect } from "react";
+import { ThemeProvider } from "next-themes";
+import Header from "components/header/header";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -25,7 +27,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Header />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

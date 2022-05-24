@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--ui-background);
+  transition: .3s background;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ui-text: var(--text-default);
+  --ui-text-bright: var(--text-dark);
+  --ui-text-dim: var(--text-semi-dark);
+  --ui-foreground: #52525b;
+  --ui-background: #f2f3f4;
+  --ui-separator: rgba(0, 0, 0, 0.15);
+
+  --text-dark: rgba(0, 0, 0, 1);
+  --text-semi-dark: rgba(0, 0, 0, 0.75);
+  --text-default: rgba(0, 0, 0, 0.5);
+  --text-semi-light: rgba(0, 0, 0, 0.35);
+  --text-light: rgba(0, 0, 0, 0.2);
+  --text-white: rgba(255, 255, 255, 1);
+  --text-semi-white: rgba(255, 255, 255, 0.75);
+  --text-semi-light-white: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme='dark'] {
+  --ui-text: var(--text-semi-white);
+  --ui-text-bright: var(--text-white);
+  --ui-text-dim: var(--text-semi-light-white);
+
+  --ui-background: #202124;
+  --ui-foreground: #fafbfc;
+  --ui-text: rgba(255, 255, 255, 1);
+  --ui-separator:  #5f6368;
+}
