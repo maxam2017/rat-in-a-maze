@@ -1,7 +1,10 @@
+import CodeEditor from "components/code-editor";
 import MazeContainer from "components/maze/maze-container";
 import Question from "components/question";
 import type { NextPage } from "next";
 import styles from "../assets/stylesheet/home.module.scss";
+
+import Play from "assets/svg/play.svg";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +14,18 @@ const Home: NextPage = () => {
         <MazeContainer />
         <p className={styles.maze__help}>You can drag 🐭 and 🧀️！</p>
       </div>
-      <div className={styles.view__col}></div>
+      <div className={styles.view__col}>
+        <CodeEditor />
+        <footer className={styles.footer}>
+          <button disabled className={styles["button--reset"]}>
+            Reset
+          </button>
+          <button className={styles["button--submit"]}>
+            <Play />
+            Run Code
+          </button>
+        </footer>
+      </div>
     </div>
   );
 };
