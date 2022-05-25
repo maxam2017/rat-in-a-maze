@@ -1,12 +1,14 @@
 .grid {
   --maze-cell-size: 30px;
 
+  cursor: pointer;
   display: grid;
   grid-gap: 8px;
   grid-template-columns: repeat(var(--maze-size), var(--maze-cell-size));
 }
 
 .grid__cell {
+  user-select: none;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -28,4 +30,9 @@
     #242424 5px,
     #242424 10px
   );
+}
+
+.grid__cell--hovering {
+  transition: color 0.2s;
+  color: rgba(0, 0, 0, 0.45);
 }

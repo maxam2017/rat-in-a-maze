@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Path Finding Playground | 🐭 in a maze</title>
+        <title>🐭 in a maze | Path Finding Playground</title>
         <meta
           name="description"
           content="Help the mouse find the way to 🧀️ and learn DFS, BFS and other path-finding algorithms."
