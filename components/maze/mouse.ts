@@ -24,7 +24,8 @@ export default class Mouse implements MouseInterface {
     const track = Coordinate.track(prev, coordinate);
 
     if (!track) {
-      throw new Error(`🐭: can't move to (${coordinate})`);
+      // throw new Error(`🐭: can't move to (${coordinate})`);
+      this.coordinate$.yield(coordinate);
     } else {
       track
         .filter((_, index) => index !== 0)

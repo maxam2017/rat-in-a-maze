@@ -1,8 +1,19 @@
 import { MouseEvent, useMemo, useRef, useState } from "react";
-import { CellType, MazeCellState, MazeProps } from "./maze.type";
+import { CellType, Coordinates, MazeCellState } from "./maze.type";
 import { Coordinate } from "./maze.util";
 
-export function useMaze({ size, coordinates }: MazeProps) {
+interface MazeOptions {
+  /**
+   * the number of cells in column/row
+   */
+  size: number;
+  /**
+   * coordinate map for `rat`, `cheese` and `wall`
+   */
+  coordinates: Coordinates;
+}
+
+export function useMaze({ size, coordinates }: MazeOptions) {
   const cells = useMemo<CellType[]>(() => {
     const result = Array(size * size).fill(CellType.Empty);
 

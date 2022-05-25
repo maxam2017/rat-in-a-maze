@@ -22,6 +22,7 @@ export class Observable<T> implements ObservableInterface<T> {
 
   set = (value: T) => {
     this._value = value;
+    this._track = [];
     this._tasks.forEach((task) => task(value));
   };
 

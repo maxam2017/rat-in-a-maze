@@ -5,8 +5,13 @@ import type { NextPage } from "next";
 import styles from "../assets/stylesheet/home.module.scss";
 
 import Play from "assets/svg/play.svg";
+import appEmitter from "services/appEmitter";
 
 const Home: NextPage = () => {
+  const handleRun = () => {
+    appEmitter.emit("run-code");
+  };
+
   return (
     <div className={styles.view}>
       <div className={styles.view__col}>
@@ -20,7 +25,7 @@ const Home: NextPage = () => {
           <button disabled className={styles["button--reset"]}>
             Reset
           </button>
-          <button className={styles["button--submit"]}>
+          <button className={styles["button--submit"]} onClick={handleRun}>
             <Play />
             Run Code
           </button>

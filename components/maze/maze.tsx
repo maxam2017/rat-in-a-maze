@@ -1,8 +1,8 @@
 import styles from "./maze.module.scss";
-import { CellType, MazeProps } from "./maze.type";
+import { CellType } from "./maze.type";
 import { motion, AnimatePresence } from "framer-motion";
 import clsx from "clsx";
-import { useDragCell, useMaze } from "./maze.hook";
+import { useDragCell } from "./maze.hook";
 
 /**
  * variants for `framer-motion`
@@ -30,7 +30,9 @@ type CellState = {
   to: number;
 };
 
-interface MazeComponentProps extends MazeProps {
+interface MazeComponentProps {
+  size: number;
+  cells: CellType[];
   onMouseCellDrag?(cell: CellState): void;
   onEmptyCellDrag?(cell: CellState): void;
   onCheeseCellDrag?(cell: CellState): void;
@@ -41,12 +43,11 @@ interface MazeComponentProps extends MazeProps {
  */
 export default function Maze({
   size,
-  coordinates,
+  cells,
   onMouseCellDrag,
   onEmptyCellDrag,
   onCheeseCellDrag,
 }: MazeComponentProps) {
-  const { cells } = useMaze({ size, coordinates });
   const handleDragEnd = (cell: CellState) => {
     switch (cell.type) {
       case CellType.Rat:
