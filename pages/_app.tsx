@@ -1,4 +1,4 @@
-import "../assets/stylesheet/globals.css";
+import "../assets/stylesheet/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { generateAsciiMaze } from "utils";

@@ -1,5 +1,5 @@
 import ThemeSwitch from "components/theme-switch";
-import styles from "./header.module.css";
+import styles from "./header.module.scss";
 
 export default function Header() {
   return (
