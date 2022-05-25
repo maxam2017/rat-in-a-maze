@@ -10,7 +10,13 @@ type Coordinate = [number, number];
 type Coordinates = Partial<Record<CellType, Coordinate | Coordinate[]>>;
 
 interface MazeProps {
+  /**
+   * the number of cells in column/row
+   */
   size: number;
+  /**
+   * coordinate map for `rat`, `cheese` and `wall`
+   */
   coordinates: Coordinates;
 }
 

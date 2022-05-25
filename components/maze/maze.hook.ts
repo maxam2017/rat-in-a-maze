@@ -10,6 +10,8 @@ export function useMaze({ size, coordinates }: MazeProps) {
       const normalizedCoordinates = normalizeCoordinate(value);
       normalizedCoordinates.forEach(([row, col]) => {
         const index = row * size + col;
+        if (index >= size * size) return;
+
         result[index] = key as CellType;
       });
     });
