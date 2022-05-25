@@ -20,4 +20,16 @@ interface MazeProps {
   coordinates: Coordinates;
 }
 
-export { CellType, type Coordinate, type Coordinates, type MazeProps };
+type MazeCellState = {
+  type: CellType;
+  from: number;
+  to: number;
+};
+
+export {
+  CellType,
+  type Coordinate,
+  type Coordinates,
+  type MazeProps,
+  type MazeCellState,
+};
