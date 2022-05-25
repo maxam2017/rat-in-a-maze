@@ -1,0 +1,31 @@
+.grid {
+  --maze-cell-size: 30px;
+
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(var(--maze-size), var(--maze-cell-size));
+}
+
+.grid__cell {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--maze-cell-size);
+  height: var(--maze-cell-size);
+  border-radius: 4px;
+  background: var(--ui-maze-background);
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.grid__cell--wall {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgb(114, 114, 114),
+    rgb(112, 112, 112) 5px,
+    #242424 5px,
+    #242424 10px
+  );
+}
