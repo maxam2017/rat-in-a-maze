@@ -12,3 +12,17 @@
   font-weight: 700;
   color: var(--ui-text-bright);
 }
+
+.header__addon {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.header__addon__link {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: var(--ui-foreground);
+}
